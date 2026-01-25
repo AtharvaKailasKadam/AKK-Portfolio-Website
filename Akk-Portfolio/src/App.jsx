@@ -1,7 +1,6 @@
 import './App.css'
 import CustomCursor from './Components/CustomCursor'
 import NavBar from './Components/NavBar'
-import ParticlesBackground from './Components/ParticlesBackground'
 import { AboutUs } from './Sections/AboutUs'
 import { Contact } from './Sections/Contact'
 import { Experience } from './Sections/Experience'
@@ -15,7 +14,6 @@ export default function App() {
     <>
     <CustomCursor />
       <div className='relative gradient text-white'>
-        <ParticlesBackground />
         <NavBar />
         <Home />
         <AboutUs />

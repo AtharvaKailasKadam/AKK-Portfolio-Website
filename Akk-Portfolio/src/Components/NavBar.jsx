@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
+import { useState,useRef } from "react";
 import logo from "../assets/logo.png"
 import { OverlayMenu } from "./OverlayMenu";
 
@@ -9,8 +9,72 @@ import { FiMenu } from "react-icons/fi";
 const NavBar =() =>{
 
     const [menuOpen, setMenuOpen] = useState(false);
-
     const [visible, setVisible] = useState(true);
+    const [forceVisible, setForceVisible] = useState(false);
+
+    const LastScrollY = useRef(0);
+    const timerId = useRef(null);
+
+    useEffect(() => {
+        const homeSection = document.querySelector("#home")
+        if(!homeSection) return;
+        const observer = new IntersectionObserver(
+        ([entry]) => {
+            setForceVisible(entry.isIntersecting);
+            if(entry.isIntersecting)
+            {
+                setForceVisible(true);
+                setVisible(true);
+            }
+            else
+            {
+                setForceVisible(false);
+            }
+        },{threshold :0.1}
+        );
+        if(homeSection)
+        {
+            observer.observe(homeSection);
+        }
+        return () => {
+            if(homeSection)
+            {
+                observer.unobserve(homeSection);
+            }
+        };
+    },[]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if(forceVisible)
+            {
+                setVisible(true);
+                if(timerId.current) clearTimeout(timerId.current);
+                return;
+            }
+            const currentScrollY  = window.scrollY;
+            if(currentScrollY > LastScrollY.current)
+            {
+                setVisible(false)
+            }
+            else
+            {
+                setVisible(true)
+                if(timerId.current) clearTimeout(timerId.current);
+                timerId.current= setTimeout(() =>{
+                    setVisible(false)
+                },3000)
+            }
+            LastScrollY.current = currentScrollY;
+
+        }
+        window.addEventListener("scroll", handleScroll, {passive:true})
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            if(timerId.current) clearTimeout(timerId.current);
+        };
+    },[forceVisible]);
 
 
     return (
@@ -20,7 +84,7 @@ const NavBar =() =>{
                     <div className="flex items-center space-x-2">
                         <img src={logo} alt="logo" className="w-20 h-20" />
                         <div>
-                            <div className="fixed top-8  lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
+                            <div className="flex-1 flex top-8  lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
                                 <button aria-label="Menu" className="inline-flex items-center justify-center p-2 text-white text-3xl hover:text-gray-300 focus:outline-none">
                                     <FiMenu
                                         aria-hidden="true"
