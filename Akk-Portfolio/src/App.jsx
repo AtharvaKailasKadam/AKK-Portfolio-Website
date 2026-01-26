@@ -17,8 +17,8 @@ export default function App() {
         <NavBar />
         <Home />
         <AboutUs />
-        <Experience />
         <Skills />
+        <Experience />
         <Testimonial />
         <Contact />
       </div>
