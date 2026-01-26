@@ -32,7 +32,7 @@ export const AboutUs=() => {
                         transition={{ duration: 0.6 }}
                         //Excutes the Animation only Once.
                         viewport={{ once: true, amount: 0.5 }}>
-                            <motion.div className="relative w-[160px] h-[180px] md:w-[220px] md:h-[240px] rounded-2xl hover:scale-105 shadow-2xl bg-gradient-to-r from-[#1cd8d2]/20 to-[302b63]/20 border border-[white] overflow-hidden">
+                            <motion.div className="relative w-[200px] h-[220px] md:w-[220px] md:h-[240px] rounded-2xl hover:scale-105 shadow-2xl bg-gradient-to-r from-[#1cd8d2]/20 to-[302b63]/20 border border-[white] overflow-hidden">
                                 <img src={aboutImg} alt="MySelf" className="absolute inset-0" />
                             </motion.div>
 

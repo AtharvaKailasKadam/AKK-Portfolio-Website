@@ -27,12 +27,14 @@ export const Skills = () => {
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-white rounded-full bg-gradient-to-r from-[#302b63] via-[#00bd8f] to-[#1cd8d3] blur-[120px] animate-pulse
                     opacity-20"/>
                     <div className="absolute bottom-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-white rounded-full bg-gradient-to-r from-[#302b63] via-[#00bd8f] to-[#1cd8d3] blur-[120px] animate-pulse
-                    opacity-20 delay-500"/>
+                    opacity-20"/>
                 </div>
-                <motion.h2 className="mt-10 text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#1cd8d2] z-10"
+                <motion.h2 className="mt-10 sm:mt-20 text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#1cd8d2] z-10"
                 initial={{opacity:0, y:30}}
                 animate={{opacity:1, y:0}}
-                transition={{duration:0.8, delay:0.1}} >
+                transition={{duration:0.6}}
+                whileInView={{opacity:1, y:0}}
+                viewport={{once:true, amount:0.6}} >
                     <u>MY SKILLS</u>
                 </motion.h2>
                 <motion.p className="text-2xl mt-5 sm:text-3xl font-bold bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] z-10"
@@ -47,7 +49,8 @@ export const Skills = () => {
                     <motion.div className="w-full max-w-4xl px-4"
                         initial={{opacity:0, y:30}}
                         animate={{opacity:1, y:0}}
-                        transition={{duration:0.5, delay:0.2}} >
+                        transition={{duration:0.8, delay:0.2}}
+                        viewport={{once:true, amount:0.6}} >
                         <h3 className="text-3xl mt-5 sm:text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63]">
                             Languages
                         </h3>
@@ -72,7 +75,8 @@ export const Skills = () => {
                     <motion.div className="w-full max-w-4xl px-4 mt-12"
                         initial={{opacity:0, y:30}}
                         animate={{opacity:1, y:0}}
-                        transition={{duration:0.5, delay:0.3}} >
+                        transition={{duration:0.5, delay:0.3}} 
+                        viewport={{once:true, amount:0.6}}>
                         <h3 className="text-3xl mt-5 sm:text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63]">
                             Frameworks & Libraries
                         </h3>
@@ -97,7 +101,8 @@ export const Skills = () => {
                     <motion.div className="w-full max-w-4xl px-4 mt-12"
                         initial={{opacity:0, y:30}}
                         animate={{opacity:1, y:0}}
-                        transition={{duration:0.5, delay:0.4}} >
+                        transition={{duration:0.5, delay:0.4}} 
+                        viewport={{once:true ,amount:0.6}}>
                         <h3 className="text-3xl mt-5 sm:text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63]">
                             Tools & OS
                         </h3>
