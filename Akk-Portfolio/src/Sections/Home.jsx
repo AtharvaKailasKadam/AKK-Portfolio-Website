@@ -1,6 +1,15 @@
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import ParticlesBackground from "../Components/ParticlesBackground";
+import { FaXTwitter, FaLinkedin, FaGithub} from "react-icons/fa6"
+import { href } from "react-router-dom";
+
+const socials =[
+    {Icon : FaXTwitter, label : "X", href : "https://x.com/@Atharva_K_Kadam"},
+    {Icon : FaLinkedin, label : "Linkedin", href : "https://www.linkedin.com/in/atharva-kadam-176325328"},
+    {Icon : FaGithub, label : "Github", href : "https://github.com/AtharvaKailasKadam"}
+]
+
 
 export const Home = () => {
     const roles = useMemo(() => ["Web Developer", "Frontend Developer", "MERN Stack Developer", "CyberSecurity Enthusiast"], []);
@@ -62,7 +71,7 @@ export const Home = () => {
                             initial={{opacity:0, y: 24}}
                             animate={{opacity:1, y:0}}
                             transition={{duration:1, delay:0.4}}>
-                                Hello I'm
+                                Hello...! I'm
                                 <br />
                                 <span className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap"> 
                                     Atharva Kailas Kadam
@@ -74,6 +83,24 @@ export const Home = () => {
                             transition={{duration:1, delay:0.4}}>
                                 I’m a passionate Frontend Developer who enjoys building clean, responsive, and user-friendly web experiences. I focus on turning ideas into simple, efficient interfaces while continuously learning modern web technologies.
                             </motion.p>
+                            <motion.div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-4"
+                            initial={{opacity:0}}
+                            animate={{opacity:1}}
+                            transition={{duration:1, delay:0.4}}>
+                                <a href="#projects" className="px-6 py-3 rounded-full font-medium text-lg text-white bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-all">
+                                View My Work</a>
+                                <a href="/Resume.pdf" className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-300 hover:scale-105 shadow-lg">
+                                My Resume</a>
+                            </motion.div>
+
+                            <div className="mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start">
+                            {socials.map(({Icon, label, href}) => (
+                                <motion.a href={href} key={label} className="text-white hover:text-gray-300 transition-colors duration-300 hover:scale-105">
+                                    <Icon />
+                                </motion.a>
+                            ))}
+
+                            </div>
 
                         </div>
 
