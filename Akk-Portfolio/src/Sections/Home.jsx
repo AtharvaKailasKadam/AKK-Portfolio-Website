@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ParticlesBackground from "../Components/ParticlesBackground";
 import { FaXTwitter, FaLinkedin, FaGithub} from "react-icons/fa6"
 import { href } from "react-router-dom";
+import Avatar from "../Assets/Avatar.png";
 
 const socials =[
     {Icon : FaXTwitter, label : "X", href : "https://x.com/@Atharva_K_Kadam"},
@@ -95,7 +96,11 @@ export const Home = () => {
 
                             <div className="mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start">
                             {socials.map(({Icon, label, href}) => (
-                                <motion.a href={href} key={label} className="text-white hover:text-gray-300 transition-colors duration-300 hover:scale-105">
+                                <motion.a href={href} key={label} className="text-white hover:text-gray-300 transition-colors duration-300 hover:scale-105"
+                                aria-label={label} target="_blank" rel="noopener noreferrer"
+                                initial={{opacity:0, y: 20}}
+                                animate={{opacity:1, y:0}}
+                                transition={{duration:0.6, delay:0.6 + socials.indexOf({Icon, label, href}) * 0.2}}>
                                     <Icon />
                                 </motion.a>
                             ))}
@@ -104,6 +109,18 @@ export const Home = () => {
 
                         </div>
 
+                    </div>
+
+                    <div className="relative-hidden lg:block">
+                        <motion.img src={Avatar} alt="AtharvaKadam"
+                        className="absolute mt-20 -translate-y-1/2 object-contain select-none pointer-events-none"
+                        // Change the Position of the Image from here.
+                        style={{right:"-130px", width:"min(30vw, 750px)", maxHeight:"90vh"}}
+
+                        initial={{opacity:0, y: 40, scale:0.98}}
+                        animate={{opacity:1, y:0, scale:1}}
+                        transition={{duration:0.2, delay:0.8}}
+                    />
                     </div>
                 </div>
             </section>
