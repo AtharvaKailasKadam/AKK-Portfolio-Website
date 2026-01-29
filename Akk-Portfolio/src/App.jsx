@@ -5,6 +5,7 @@ import { AboutUs } from './Sections/AboutUs'
 import { Contact } from './Sections/Contact'
 import { Experience } from './Sections/Experience'
 import { Home } from './Sections/Home'
+import { Projects } from './Sections/Projects'
 import { Skills } from './Sections/Skills'
 import { Testimonial } from './Sections/Testimonial'
 
@@ -18,6 +19,7 @@ export default function App() {
         <Home />
         <AboutUs />
         <Skills />
+        <Projects />
         <Experience />
         <Testimonial />
         <Contact />
