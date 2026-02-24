@@ -1,14 +1,33 @@
     export const experiences = [
     {
+        role: "Frontend Developer (HTML, CSS & JavaScript)",
+        company: "Self-Learning & Practice Projects",
+        duration: "2023 – 2024",
+        type: "Foundation Building",
+        description: [
+        "Built static and dynamic websites using HTML, CSS, and JavaScript",
+        "Implemented responsive layouts using Flexbox and Grid",
+        "Practiced DOM manipulation and event handling",
+        "Strengthened core programming and problem-solving skills",
+        ],
+        techStack: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Git",
+        "GitHub",
+        ],
+    },
+    {
         role: "Frontend Developer (Fresher)",
         company: "Self-Driven Projects",
         duration: "2024 – Present",
         type: "Project-Based Experience",
         description: [
-        "Built responsive and interactive web applications using React.js",
-        "Developed reusable UI components with Tailwind CSS",
-        "Implemented smooth animations using Framer Motion",
-        "Worked with modern JavaScript (ES6+) and component-based architecture and Deployed on Vercel and Netlify",
+        "Built responsive web apps using React.js",
+        "Created reusable UI with Tailwind CSS",
+        "Added smooth animations using Framer Motion",
+        "Used modern JavaScript and deployed on Vercel & Netlify",
         ],
         techStack: [
         "React",
@@ -27,10 +46,10 @@
         duration: "2025 – Present",
         type: "Hands-on Learning",
         description: [
-        "Built full-stack applications using MongoDB, Express, React, and Node.js",
-        "Designed REST APIs and handled frontend-backend integration",
-        "Managed application state and user interactions",
-        "Focused on clean code structure and scalability",
+        "Developed full-stack apps using MERN stack",
+        "Built REST APIs and integrated frontend & backend",
+        "Managed state and user interactions",
+        "Focused on clean and scalable code",
         ],
         techStack: [
         "MongoDB",

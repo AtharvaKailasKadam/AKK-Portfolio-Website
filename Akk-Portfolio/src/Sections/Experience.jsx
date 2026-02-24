@@ -108,12 +108,12 @@ export const Experience = () => {
                             {!isMobile && (
                                 <div className="relative w-full max-w-7xl">
                                     <div className="relative h-[6px] bg-white/15 rounded">
-                                        <motion.div className="absolute left-0 top-0 h-[6px] bg-white origin-left"
+                                        <motion.div className="absolute left-0 top-0 h-[6px] bg-white origin-left rounded"
                                         style={{width : lineSize}}>
                                         </motion.div>
                                     </div>
 
-                                    <div className="relative flex justify-between mt-0">
+                                    <div className="relative flex justify-around top-[-16px] mt-0">
                                         {experiences.map((exp, idx) =>
                                         <ExperienceItem
                                         key={idx}

@@ -21,7 +21,6 @@ export default function App() {
         <Skills />
         <Projects />
         <Experience />
-        <Testimonial />
         <Contact />
       </div>
     </>
