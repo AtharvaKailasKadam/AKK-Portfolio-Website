@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ParticlesBackground from "../Components/ParticlesBackground";
 import { FaXTwitter, FaLinkedin, FaGithub} from "react-icons/fa6"
 import { href } from "react-router-dom";
-import Avatar from "../Assets/Avatar.png";
+import Avatar from "../assets/Avatar.png";
 
 const socials =[
     {Icon : FaXTwitter, label : "X", href : "https://x.com/@Atharva_K_Kadam"},
