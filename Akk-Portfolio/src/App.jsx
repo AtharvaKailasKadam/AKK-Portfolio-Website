@@ -8,6 +8,7 @@ import { Home } from './Sections/Home'
 import { Projects } from './Sections/Projects'
 import { Skills } from './Sections/Skills'
 import { Testimonial } from './Sections/Testimonial'
+import Footer from './Sections/Footer'
 
 export default function App() {
 
@@ -21,7 +22,9 @@ export default function App() {
         <Skills />
         <Projects />
         <Experience />
+        <Testimonial />
         <Contact />
+        <Footer />
       </div>
     </>
   )

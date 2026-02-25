@@ -44,7 +44,7 @@ export const Home = () => {
 
     return (
         <>
-            <section id="home" className='w-full h-screen relative bg-black overflow-hidden'>
+            <section id="home" className='w-full min-h-screen flex items-center justify-center relative bg-black overflow-hidden py-12 sm:py-20'>
                 <ParticlesBackground />
                 <div className="absolute inset-0">
                     <div className="absolute -top-32 -left-32 w-[70vw] sm:w-[50vw] md:w-[40vw] h-[70vw] sm:h-[50vw] md:h-[40vw] bg-gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
@@ -54,9 +54,9 @@ export const Home = () => {
                     opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] sm:blur-[100px] md:blur-[150px] rounded-full animate-pulse delay-500">
                     </div>
                 </div>
-                <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-col-1 lg:grid-cols-2">
-                    <div className="flex flex-col justify-center h-full text-center lg:text-left relative">
-                        <div className="w-full lg:pr-24 mx-auto max-w[48rem]">
+                <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+                    <div className="flex flex-col justify-center text-center lg:text-left relative w-full">
+                        <div className="w-full mx-auto">
                             <motion.div className="mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white tracking-wide min-h-[1.6em]"
                             initial={{opacity:0, y: 12}}
                             animate={{opacity:1, y:0}}
@@ -74,7 +74,7 @@ export const Home = () => {
                             transition={{duration:1, delay:0.4}}>
                                 Hello...! I'm
                                 <br />
-                                <span className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap"> 
+                                <span className="text-white font-bold text-5xl sm:text-5xl md:text-6xl lg:text-7xl lg:whitespace-nowrap"> 
                                     Atharva Kailas Kadam
                                 </span>
                             </motion.h1>
@@ -111,11 +111,9 @@ export const Home = () => {
 
                     </div>
 
-                    <div className="relative-hidden lg:block">
+                    <div className="hidden lg:flex justify-end items-center w-full lg:pr-10 relative">
                         <motion.img src={Avatar} alt="AtharvaKadam"
-                        className="absolute mt-20 -translate-y-1/2 object-contain select-none pointer-events-none"
-                        // Change the Position of the Image from here.
-                        style={{right:"-130px", width:"min(30vw, 750px)", maxHeight:"90vh"}}
+                        className="object-contain select-none pointer-events-none w-full max-w-xs lg:max-w-sm"
 
                         initial={{opacity:0, y: 40, scale:0.98}}
                         animate={{opacity:1, y:0, scale:1}}

@@ -22,18 +22,18 @@ function ExperienceItem({ idx, start, end, role, company, duration, description,
                 style={{height: 40, opacity}}>
                 </motion.div>
 
-                <motion.article className = {`absolute ${idx % 2 === 0 ? "bottom-12" :"top-12"} bg-gray-900/80 backdrop-blur border border-gray-700/70 rounded-xl p-7 w-[320px] shadow-lg `}
+                <motion.article className = {`absolute ${idx % 2 === 0 ? "bottom-12" :"top-12"} bg-gray-900/80 backdrop-blur border border-gray-700/70 rounded-xl p-5 sm:p-7 w-[280px] sm:w-[320px] shadow-lg `}
                 style={{opacity, y, maxWidth: "90vw"}}
                 transition={{duration : 0.4, delay : idx*0.15}}>
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="text-lg sm:text-xl font-semibold text-white break-words">
                         {role}
                     </h3>
-                    <p>
+                    <p className="text-sm sm:text-base">
                         {company} | {duration}
                     </p>
-                    <ul className="text-md text-gray-300 break-words">
+                    <ul className="text-sm sm:text-base text-gray-300 break-words">
                         {description.map((item, index) => (
-                            <li key={index} className="text-md text-gray-300 break-words">
+                            <li key={index} className="text-sm sm:text-base text-gray-300 break-words">
                                 {item}
                             </li>
                         ))}
@@ -47,18 +47,18 @@ function ExperienceItem({ idx, start, end, role, company, duration, description,
             <motion.div className="absolute -left-[14px] top-3 z-10 w-7 h-7 rounded-full bg-white shadow-[0_0_0_8px_rgba(255, 255, 255, 0.1)]"
             style={{scale, opacity}}>
             </motion.div>
-            <motion.article className="bg-gray-900/80 backdrop-blur border border-gray-700/70 rounded-xl p-5 w-[90vw] max-w-sm ml-6 shadow-lg"
+            <motion.article className="bg-gray-900/80 backdrop-blur border border-gray-700/70 rounded-xl p-4 sm:p-5 w-[90vw] max-w-sm ml-4 sm:ml-6 shadow-lg"
             style={{opacity, x}}
             transition={{duration : 0.4, delay : idx*0.15}}>
-                <h3 className="text-xl font-semibold text-white break-words">
+                <h3 className="text-lg sm:text-xl font-semibold text-white break-words">
                     {role}
                 </h3>
-                <p>
+                <p className="text-sm sm:text-base">
                     {company} | {duration}
                 </p>
-                <ul className="text-md text-gray-300 break-words">
+                <ul className="text-sm sm:text-base text-gray-300 break-words">
                     {description.map((item, index) => (
-                        <li key={index} className="text-md text-gray-300 break-words">
+                        <li key={index} className="text-sm sm:text-base text-gray-300 break-words">
                             {item}
                         </li>
                     ))}
@@ -96,7 +96,7 @@ export const Experience = () => {
                 style={{height: `${SCENE_HEIGHT_VH}vh`, minHeight:"120vh"}}
                 className="relative">
                     <div className="sticky top-0 h-screen flex flex-col">
-                        <motion.h2 className="items-center text-center overflow-hidden mt-10 sm:mt-20 text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#1cd8d2] z-10"
+                        <motion.h2 className="items-center text-center overflow-hidden mt-6 sm:mt-10 md:mt-20 text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#1cd8d2] z-10 px-4"
                             initial={{opacity:0, y:30}}
                             animate={{opacity:1, y:0}}
                             transition={{duration:0.6}}
@@ -104,7 +104,7 @@ export const Experience = () => {
                             viewport={{once:true, amount:0.6}} >
                             <u>EXPERIENCE</u>
                         </motion.h2>
-                        <div className="flex flex-1 items-center justify-center px-6 pb-10">
+                        <div className="flex flex-1 items-center justify-center px-3 sm:px-6 pb-10">
                             {!isMobile && (
                                 <div className="relative w-full max-w-7xl">
                                     <div className="relative h-[6px] bg-white/15 rounded">
@@ -138,7 +138,7 @@ export const Experience = () => {
                                         </motion.div>
                                     </div>
 
-                                    <div className="relative flex flex-col gap-10 ml-10 justify-between mt-6">
+                                    <div className="relative flex flex-col gap-8 sm:gap-10 ml-6 sm:ml-10 justify-between mt-6\">
                                         {experiences.map((exp, idx) =>
                                         <ExperienceItem
                                         key={idx}
