@@ -1,63 +1,33 @@
     export const experiences = [
     {
-        role: "Frontend Developer (HTML, CSS & JavaScript)",
-        company: "Self-Learning & Practice Projects",
-        duration: "2023 – 2024",
-        type: "Foundation Building",
+        role: "Frontend Developer",
+        company: "Self-Learning",
+        duration: "2023–2024",
         description: [
-        "Built static and dynamic websites using HTML, CSS, and JavaScript",
-        "Implemented responsive layouts using Flexbox and Grid",
-        "Practiced DOM manipulation and event handling",
-        "Strengthened core programming and problem-solving skills",
+        "Built responsive websites with HTML, CSS & JS",
+        "Practiced DOM, Flexbox, Grid & problem-solving"
         ],
-        techStack: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Git",
-        "GitHub",
-        ],
+        techStack: ["HTML", "CSS", "JavaScript", "Git"]
     },
     {
-        role: "Frontend Developer (Fresher)",
-        company: "Self-Driven Projects",
-        duration: "2024 – Present",
-        type: "Project-Based Experience",
+        role: "Frontend Developer (React)",
+        company: "Self Projects",
+        duration: "2024–Present",
         description: [
-        "Built responsive web apps using React.js",
-        "Created reusable UI with Tailwind CSS",
-        "Added smooth animations using Framer Motion",
-        "Used modern JavaScript and deployed on Vercel & Netlify",
+        "Developed responsive React apps",
+        "Used Tailwind & Framer Motion",
+        "Deployed on Vercel & Netlify"
         ],
-        techStack: [
-        "React",
-        "JavaScript",
-        "Tailwind CSS",
-        "Framer Motion",
-        "HTML",
-        "CSS",
-        "Git",
-        "GitHub",
-        ],
+        techStack: ["React", "Tailwind", "JavaScript", "GitHub"]
     },
     {
-        role: "MERN Stack Developer (Learning & Projects)",
+        role: "MERN Stack Developer",
         company: "Personal Projects",
-        duration: "2025 – Present",
-        type: "Hands-on Learning",
+        duration: "2025–Present",
         description: [
-        "Developed full-stack apps using MERN stack",
-        "Built REST APIs and integrated frontend & backend",
-        "Managed state and user interactions",
-        "Focused on clean and scalable code",
+        "Built full-stack MERN applications",
+        "Created REST APIs & integrated frontend/backend"
         ],
-        techStack: [
-        "MongoDB",
-        "Express",
-        "React",
-        "Node.js",
-        "JavaScript",
-        "Git",
-        ],
-    },
+        techStack: ["MongoDB", "Express", "React", "Node.js"]
+    }
     ];
