@@ -1,4 +1,5 @@
     import React from "react";
+    import contactUs from "../assets/Conctact Us Img.png"
     import { motion } from "framer-motion";
     import ParticlesBackground from "../Components/ParticlesBackground";
     import Toast from "../Components/Toast";
@@ -69,12 +70,11 @@
                     repeat: Infinity,
                     ease: "easeInOut",
                     }}
-                    className="relative w-[280px] h-[320px] sm:w-[320px] sm:h-[360px] md:w-[360px] md:h-[400px] rounded-2xl overflow-hidden hover:scale-105 shadow-2xl transition-transform duration-300 cursor-pointer"
-                >
+                    className="relative w-[280px] h-[900px] sm:w-[320px] sm:h-[500px] md:w-[360px] md:h-[500px] rounded-2xl overflow-hidden hover:scale-105 shadow-2xl transition-transform duration-300 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-[#1cd8d2]/40 to-[#302b63]/40 rounded-2xl border border-[#1cd8d2]/60"></div>
                     <div className="relative w-full h-full bg-gradient-to-br from-[#1cd8d2]/20 to-[#302b63]/20">
                     <img
-                        src="https://via.placeholder.com/360x400/1a1a2e/1cd8d2?text=Your+Image+Here"
+                        src={contactUs}
                         alt="Contact Section"
                         className="w-full h-full object-cover"
                     />

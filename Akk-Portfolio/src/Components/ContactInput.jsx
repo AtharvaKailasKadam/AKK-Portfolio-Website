@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import contactUs from "../assets/Conctact Us Img.png"
 
 const ContactInput = ({
   label,
