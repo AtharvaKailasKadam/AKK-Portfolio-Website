@@ -65,7 +65,6 @@ const ContactInput = ({
         />
       </div>
 
-      {/* Error message */}
       {error && (
         <motion.p
           id={`${name}-error`}
