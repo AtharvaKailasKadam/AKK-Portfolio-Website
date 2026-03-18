@@ -1,7 +1,6 @@
 import { useState, useCallback, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
-// Initialize EmailJS (should be done once)
 const initEmailJS = () => {
   const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
   if (!publicKey) {
@@ -17,35 +16,30 @@ const useContactForm = () => {
     from_email: "",
     subject: "",
     message: "",
-    honeypot: "", // Anti-spam field
+    honeypot: "",
   });
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [toast, setToast] = useState(null);
 
-  // Anti-spam: track last submission time
   const lastSubmissionTime = useRef(0);
-  const COOLDOWN_PERIOD = 5000; // 5 seconds
+  const COOLDOWN_PERIOD = 5000;
 
-  // Validation rules
   const validateForm = useCallback(() => {
     const newErrors = {};
 
-    // Honeypot check (spam protection)
     if (formData.honeypot.trim() !== "") {
       newErrors.honeypot = "Invalid form submission";
       return newErrors;
     }
 
-    // Name validation
     if (!formData.from_name.trim()) {
       newErrors.from_name = "Full name is required";
     } else if (formData.from_name.trim().length < 2) {
       newErrors.from_name = "Name must be at least 2 characters";
     }
 
-    // Email validation
     if (!formData.from_email.trim()) {
       newErrors.from_email = "Email is required";
     } else {
@@ -55,14 +49,12 @@ const useContactForm = () => {
       }
     }
 
-    // Subject validation
     if (!formData.subject.trim()) {
       newErrors.subject = "Subject is required";
     } else if (formData.subject.trim().length < 3) {
       newErrors.subject = "Subject must be at least 3 characters";
     }
 
-    // Message validation
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     } else if (formData.message.trim().length < 10) {
@@ -72,7 +64,6 @@ const useContactForm = () => {
     return newErrors;
   }, [formData]);
 
-  // Check cooldown period
   const checkCooldown = useCallback(() => {
     const now = Date.now();
     const timeSinceLastSubmission = now - lastSubmissionTime.current;
@@ -90,7 +81,6 @@ const useContactForm = () => {
     return { isOnCooldown: false };
   }, []);
 
-  // Handle input change
   const handleChange = useCallback(
     (e) => {
       const { name, value } = e.target;
@@ -99,7 +89,6 @@ const useContactForm = () => {
         [name]: value,
       }));
 
-      // Clear error for this field when user starts typing
       if (errors[name]) {
         setErrors((prev) => ({
           ...prev,
@@ -110,7 +99,6 @@ const useContactForm = () => {
     [errors]
   );
 
-  // Reset form
   const resetForm = useCallback(() => {
     setFormData({
       from_name: "",
@@ -122,12 +110,10 @@ const useContactForm = () => {
     setErrors({});
   }, []);
 
-  // Handle form submission
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
 
-      // Check cooldown
       const cooldownCheck = checkCooldown();
       if (cooldownCheck.isOnCooldown) {
         setToast({
@@ -137,7 +123,6 @@ const useContactForm = () => {
         return;
       }
 
-      // Validate form
       const newErrors = validateForm();
       if (Object.keys(newErrors).length > 0) {
         setErrors(newErrors);
@@ -151,34 +136,29 @@ const useContactForm = () => {
       setIsSubmitting(true);
 
       try {
-        // Initialize EmailJS if needed
         initEmailJS();
 
         const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
         const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
         const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
 
-        // Validate required environment variables
         if (!serviceId || !templateId || !publicKey) {
           throw new Error("EmailJS configuration is incomplete");
         }
 
-        // Send email using sendForm method
         await emailjs.sendForm(
           serviceId,
           templateId,
-          e.target, // Pass the form element directly
+          e.target,
           publicKey
         );
 
-        // Success
         lastSubmissionTime.current = Date.now();
         setToast({
           message: "Message sent successfully! I'll get back to you soon.",
           type: "success",
         });
 
-        // Reset form after successful submission
         resetForm();
       } catch (error) {
         console.error("Email sending failed:", error);

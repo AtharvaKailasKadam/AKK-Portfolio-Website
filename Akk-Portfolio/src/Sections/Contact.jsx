@@ -1,5 +1,5 @@
     import React from "react";
-    import contactUs from "../assets/Conctact Us Img.png"
+    import contactUs from "../assets/ContactUs.png"
     import { motion } from "framer-motion";
     import ParticlesBackground from "../Components/ParticlesBackground";
     import Toast from "../Components/Toast";
