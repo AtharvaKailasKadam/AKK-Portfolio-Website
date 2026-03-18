@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import aboutImg from "../assets/Myself.jpg";
+import { CertificatesModal } from "../Components/CertificatesModal";
+import { certificateData } from "./Certificate";
 
 export const AboutUs=() => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const glows = [
         "top-10 left-10 w-[360px] h-[360px] opacity-20 blur-[120px]",
         "bottom-0 right-10 w-[420px] h-[420px] opacity-15 blur-[150px] delay-3000",
@@ -64,6 +67,9 @@ export const AboutUs=() => {
                                     <a href="#projects" className="inline-flex items-center justify-center bg-white text-black rounded-lg border border-white px-5 py-3 hover:bg-gray-100 transition-colors">
                                         View Projects
                                     </a>
+                                    <button onClick={() => setIsModalOpen(true)} className="inline-flex items-center justify-center rounded-lg border border-[#1cd8d2] text-[#1cd8d2] px-5 py-3 hover:bg-[#1cd8d2] hover:text-black transition-colors font-medium">
+                                        View Certificates
+                                    </button>
                                     <a href="#contact" className="inline-flex items-center justify-center rounded-lg border border-white text-white px-5 py-3 hover:bg-white/10 transition-colors">
                                         Get In Touch
                                     </a>
@@ -87,6 +93,12 @@ export const AboutUs=() => {
 
                     </div>
                 </section>
+
+                <CertificatesModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    certificates={certificateData}
+                />
             </div>
         </>
     )
