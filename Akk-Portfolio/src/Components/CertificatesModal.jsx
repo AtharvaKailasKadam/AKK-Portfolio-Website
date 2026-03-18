@@ -160,7 +160,7 @@
                                 </div>
                             </div>
                             {/* Rank */}
-                            <div className="absolute top-2 right-2 text-white text-xs font-medium bg-black/50 px-2 rounded-full">
+                            <div className="absolute top-2 right-2 text-white text-xs font-medium bg-black/50 px-2 rounded-full font-bold gradient-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]">
                                 {cert.rank}
                             </div>
                             </div>
