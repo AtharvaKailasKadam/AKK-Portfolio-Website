@@ -2,7 +2,7 @@
     import dyp from "../assets/Certificates/DYP Competition.jpg";
     import avinya from "../assets/Certificates/AvinyaCertificate.jpg";
     import magnitude from "../assets/Certificates/MagnitudeCertificate.jpg";
-    import tenet from "../assets/Certificates/AtharvaKadamTenetHack.jpg";
+    import tenet from "../assets/Certificates/AtharvaKadamTENETHack.jpg";
     import mumbaihack from "../assets/Certificates/AtharvaKadamMumbaiHack.jpg";
 
     export const certificateData = [
